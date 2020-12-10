@@ -1,8 +1,8 @@
-import express, { Application, Router } from "express";
-import morgan from "morgan";
-import helmet from "helmet";
-import mongoose from "mongoose";
-import errorMiddleware from "./middleware/error.middleware";
+import express, { Application, Router } from 'express';
+import morgan from 'morgan';
+import helmet from 'helmet';
+import mongoose from 'mongoose';
+import errorMiddleware from './middleware/error.middleware';
 
 const connectToDatabase = () => {
   mongoose.connect(process.env.DATABASE_URL as string, {
@@ -13,14 +13,14 @@ const connectToDatabase = () => {
 };
 
 const initialiseMiddleware = (app: Application) => {
-  app.use(morgan("common"));
+  app.use(morgan('common'));
   app.use(helmet());
   app.use(express.json());
 };
 
 const initialiseRouters = (app: Application, routers: Router[]) => {
-  routers.forEach((router) => {
-    app.use("/", router);
+  routers.forEach(router => {
+    app.use('/', router);
   });
 };
 
