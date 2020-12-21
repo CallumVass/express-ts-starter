@@ -20,7 +20,7 @@ const initialiseMiddleware = (app: Application) => {
 
 const initialiseRouters = (app: Application, routers: Router[]) => {
   routers.forEach(router => {
-    app.use('/', router);
+    app.use(router);
   });
 };
 
