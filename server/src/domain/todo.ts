@@ -1,17 +1,14 @@
-import * as t from 'io-ts';
-import { NonEmptyString } from 'io-ts-types/lib/NonEmptyString';
+import * as D from 'io-ts/Decoder';
+import { NonEmptyString } from './types/NonEmptyString';
 
-export const CreateTodoPayload = t.type({ description: NonEmptyString, isComplete: t.boolean }, 'CreateTodoPayload');
+export const CreateTodoPayload = D.type({ description: NonEmptyString, isComplete: D.boolean });
 
-export type CreateTodoPayload = t.TypeOf<typeof CreateTodoPayload>;
+export type CreateTodoPayload = D.TypeOf<typeof CreateTodoPayload>;
 
-export const Todo = t.type(
-  {
-    id: t.string,
-    description: NonEmptyString,
-    isComplete: t.boolean,
-  },
-  'Todo',
-);
+export const Todo = D.type({
+  id: D.string,
+  description: NonEmptyString,
+  isComplete: D.boolean,
+});
 
-export type Todo = t.TypeOf<typeof Todo>;
+export type Todo = D.TypeOf<typeof Todo>;

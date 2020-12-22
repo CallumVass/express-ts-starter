@@ -17,7 +17,6 @@
     "fp-ts-contrib": "^0.1.21",
     "helmet": "^4.2.0",
     "io-ts": "^2.2.13",
-    "io-ts-types": "^0.5.12",
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0"
   },
